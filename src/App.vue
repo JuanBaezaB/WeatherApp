@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen dark:dark:bg-gray-800 dark:dark:text-gray-100">
+  <!-- <div class="min-h-screen dark:dark:bg-gray-800 dark:dark:text-gray-100">
     <div class="p-6 space-y-8">
       <header class="container flex items-center justify-between h-16 px-4 mx-auto rounded dark:dark:bg-gray-900">
         <a rel="noopener noreferrer" href="#" aria-label="Homepage">
@@ -24,35 +24,62 @@
 
       </header>
       <main>
-        <div>
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Address</label>
-            <input type="text" id="address" placeholder="Enter your address"  ref="autocomplete" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <div class="container">
+          <div class="flex flex-col items-center justify-center h-screen">
+            <h1 class="text-4xl font-bold">Weather App</h1>
+            <p class="mt-2 text-lg">Built with <span class="text-red-500">♥</span> </p>
+
+          
+          </div>
         </div>
       </main>
     </div>
+  </div> -->
+  <!-- <div class=" md:fixed md:inset-y-0 md:flex md:w-64 lg:w-72 xl:w-96 md:flex-col bg-white">
+    <TimeAndDate></TimeAndDate>
+
   </div>
 
-  <CommandPalette />
+  <div class="flex flex-1 flex-col md:pl-64 lg:pl-72 xl:pl-96 bg-gray-100 min-h-screen">
+    <WeeklyWeather />
+  </div> -->
+
+  <div class=" p-5 min-h-screen grid grid-flow-row-dense grid-cols-3 gap-2">
+    <div class="col-span-3 lg:col-span-2 bg-slate-400">
+      <div class="h-full grid grid-cols-1">
+        <div>
+          asdfsa
+        </div>
+        <div>
+          as
+        </div>
+      </div>
+
+    </div>
+    <div class="bg-red-400 col-span-3 lg:col-span-1 rounded-3xl">
+      <div class="flex flex-col items-center justify-center h-full">
+        <h1 class="text-4xl font-bold">Weather App</h1>
+        <p class="mt-2 text-lg">Built with <span class="text-red-500">♥</span> </p>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import CommandPalette from './components/CommandPalette.vue'
+import moment from 'moment';
+import { ref, onMounted } from 'vue';
 import { MapPinIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import { useWeatherStore } from "./store/weather";
+import TimeAndDate from './components/TimeAndDate.vue';
+import WeeklyWeather from './components/WeeklyWeather.vue';
+
 const weatherStore = useWeatherStore();
 weatherStore.fetchWeatherDataByLocation();
 
+// navigator.permissions.query({ name: 'geolocation' }).then(console.log)
 
-console.log(weatherStore.weatherData);
 
-navigator.permissions.query({ name: 'geolocation' }).then(console.log)
 
-// const autocomplete = new google.maps.places.Autocomplete(
-//   document.getElementById("address"),
-//   {
-//     types: ["geocode"],
-//   }
-// );
 
 
 </script>
