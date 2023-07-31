@@ -1,5 +1,5 @@
 <template>
-    <div class="p-2   ">
+    <div class="p-2 h-full">
         <div >
             <p>{{ greeting }}</p>
         </div>
@@ -7,9 +7,7 @@
         <div class="m-2 text-center">
             <p class="font-semibold uppercase text-4xl md:text-2xl">{{ currentTime }}</p>
             <p class="text-xs">{{ currentDate }}</p>
-        </div>
-        
-       
+        </div> 
         
     </div>
 </template>

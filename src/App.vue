@@ -44,23 +44,28 @@
     <WeeklyWeather />
   </div> -->
 
-  <div class=" p-5 min-h-screen grid grid-flow-row-dense grid-cols-3 gap-2">
-    <div class="col-span-3 lg:col-span-2 bg-slate-400">
-      <div class="h-full grid grid-cols-1">
-        <div>
-          asdfsa
-        </div>
-        <div>
-          as
-        </div>
+  <div class=" p-3 lg:p-5 min-h-screen grid grid-flow-row-dense grid-cols-3 lg:gap-4 gap-2">
+    <div class="col-span-3 lg:col-span-2 ">
+      <div class="h-full grid grid-cols-1 gap-2">
+        <Section>
+          <TimeAndDate />
+        </Section>
+
+        <Section :title="'Today Forecast'">
+          <TodayForecast />
+        </Section>
+
+        <Section :title="'Today Highlights'">
+        </Section>
       </div>
 
     </div>
-    <div class="bg-red-400 col-span-3 lg:col-span-1 rounded-3xl">
-      <div class="flex flex-col items-center justify-center h-full">
-        <h1 class="text-4xl font-bold">Weather App</h1>
-        <p class="mt-2 text-lg">Built with <span class="text-red-500">♥</span> </p>
-      </div>
+
+
+    <div class="bg-white col-span-3 lg:col-span-1 rounded-3xl p-7">
+
+      <WeeklyWeather />
+
     </div>
   </div>
 </template>
@@ -71,7 +76,10 @@ import { ref, onMounted } from 'vue';
 import { MapPinIcon, MagnifyingGlassIcon } from '@heroicons/vue/24/outline'
 import { useWeatherStore } from "./store/weather";
 import TimeAndDate from './components/TimeAndDate.vue';
+import TodayForecast from './components/TodayForecast.vue';
 import WeeklyWeather from './components/WeeklyWeather.vue';
+import Section from './components/Section.vue';
+
 
 const weatherStore = useWeatherStore();
 weatherStore.fetchWeatherDataByLocation();
