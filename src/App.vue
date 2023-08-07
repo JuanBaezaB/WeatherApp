@@ -43,7 +43,10 @@
   <div class="flex flex-1 flex-col md:pl-64 lg:pl-72 xl:pl-96 bg-gray-100 min-h-screen">
     <WeeklyWeather />
   </div> -->
-
+  <GoogleMapsAutocompleteVue apiKey="AIzaSyBDEFvG7XTAg-raGqdpl_SjMkCjSzjFVa0" />
+  <!-- <GoogleMapLoader
+    apiKey="AIzaSyBDEFvG7XTAg-raGqdpl_SjMkCjSzjFVa0"
+  /> -->
   <div class=" p-3 lg:p-5 min-h-screen grid grid-flow-row-dense grid-cols-3 lg:gap-4 gap-2">
     <div class="col-span-3 lg:col-span-2 ">
       <div class="h-full grid grid-cols-1 gap-2">
@@ -79,7 +82,7 @@ import TimeAndDate from './components/TimeAndDate.vue';
 import TodayForecast from './components/TodayForecast.vue';
 import WeeklyWeather from './components/WeeklyWeather.vue';
 import Section from './components/Section.vue';
-
+import GoogleMapsAutocompleteVue from './components/GoogleMapsAutocomplete.vue';
 
 
 
