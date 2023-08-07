@@ -62,7 +62,7 @@
     </div>
 
 
-    <div class="bg-white col-span-3 lg:col-span-1 rounded-3xl p-7">
+    <div class="bg-white col-span-3 lg:col-span-1 rounded-3xl p-7 lg:p-7 xl:p-10">
 
       <WeeklyWeather />
 
@@ -81,8 +81,7 @@ import WeeklyWeather from './components/WeeklyWeather.vue';
 import Section from './components/Section.vue';
 
 
-const weatherStore = useWeatherStore();
-weatherStore.fetchWeatherDataByLocation();
+
 
 // navigator.permissions.query({ name: 'geolocation' }).then(console.log)
 
